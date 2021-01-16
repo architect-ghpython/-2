@@ -1,0 +1,34 @@
+{
+  "name": "Pin_Lite_down_free",
+  "version": "1.0",
+  "description": "Free download of Pinlite images!",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "options_page": "options.html",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+    "16": "images/pin16.png",
+    "32": "images/pin32.png",
+    "48": "images/pin48.png",
+    "128": "images/pin128.png"
+  }
+    
+  },
+  
+  "content_scripts": [ {
+		"js": [ "images/inject.js" ],
+		"matches": [ "https://www.bigbigwork.com/pin/*", "https://www.pinlite.net/*","https://www.bigbigwork.com/tupian/*","https://rabbit.bigbigwork.com/*" ],
+		"run_at": "document_end"
+	 } ],
+  "icons": {
+    "16": "images/pin16.png",
+    "32": "images/pin32.png",
+    "48": "images/pin48.png",
+    "128": "images/pin128.png"
+  },
+  "manifest_version": 2
+}
